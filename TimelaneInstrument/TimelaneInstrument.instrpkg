@@ -9,6 +9,8 @@
     -->
     
     <id>tools.timelane</id>
+    
+    <!-- This version should match the client protocol version to guarantee the plotted results are correct -->
     <version>1</version>
     <title>Timelane Tools</title>
     <owner>
