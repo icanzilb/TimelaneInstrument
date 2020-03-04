@@ -66,6 +66,8 @@ class ViewController: UITableViewController {
     @IBOutlet var countdownButton: UIButton!
     var sub: AnyCancellable?
     
+    @IBOutlet var counterButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -78,6 +80,14 @@ class ViewController: UITableViewController {
                 [weak self] in self?.countdownButton.setTitle($0, for: .normal)
             })
             .store(in: &subscriptions)
+        
+        $counter
+            .map { "Counter is at \($0)" }
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self ] value in
+                self?.counterButton.setTitle(value, for: .normal)
+            }
+            .store(in: &subscriptions)
     }
     
     @IBAction func doEvent(_ sender: Any) {
@@ -87,5 +97,11 @@ class ViewController: UITableViewController {
             return
         }
         countdownSubject.value -= 1
+    }
+    
+    @PublishedOnLane("Counter") var counter = 1
+    
+    @IBAction func doCounter(_ sender: Any) {
+        counter += 1
     }
 }

@@ -119,6 +119,27 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="MLV-5m-42U">
+                                        <rect key="frame" x="20" y="285.5" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MLV-5m-42U" id="nmL-Zj-dZ1">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1d6-Zb-fOU">
+                                                    <rect key="frame" x="159" y="7" width="56" height="30"/>
+                                                    <state key="normal" title="Counter"/>
+                                                    <connections>
+                                                        <action selector="doCounter:" destination="abt-EJ-raj" eventType="touchUpInside" id="5yQ-2d-1SL"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1d6-Zb-fOU" firstAttribute="centerX" secondItem="nmL-Zj-dZ1" secondAttribute="centerX" id="FdJ-Qk-KBP"/>
+                                                <constraint firstItem="1d6-Zb-fOU" firstAttribute="centerY" secondItem="nmL-Zj-dZ1" secondAttribute="centerY" id="dMM-sL-KU7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Info" footerTitle="Profile this app via the Timelane Instrument to see subscriptions and events visualized in the Instruments application." id="u8G-fW-Qmp" userLabel="Info">
@@ -134,6 +155,7 @@
                         <outlet property="cancellingSpinner" destination="FbT-7O-DIr" id="WgK-UH-0ZN"/>
                         <outlet property="completingSpinner" destination="Ta5-xc-PAI" id="fBM-dY-62I"/>
                         <outlet property="countdownButton" destination="JlA-xg-vVR" id="aqk-x0-371"/>
+                        <outlet property="counterButton" destination="1d6-Zb-fOU" id="Lor-nt-pO7"/>
                         <outlet property="failingSpinner" destination="43G-9g-DI4" id="Oul-7A-zUF"/>
                     </connections>
                 </tableViewController>
